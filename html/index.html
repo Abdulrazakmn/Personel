@@ -28,7 +28,13 @@
   
   <link rel="stylesheet" type="text/css" href="../assets/css/virtual.css">
   
-  <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
+ <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  
+  <title>Abdulraza</title>
+ 
 </head>
 <body class="theme-red">
   
@@ -592,19 +598,28 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <form class="vg-contact-form">
+          <!--form starting-->
+          
+         
+          <form id="form1" class="vg-contact-form" >
+            
+              
             <div class="form-row">
               <div class="col-12 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Name" placeholder="Your Name">
+                <input id="name1" class="form-control" type="text" name="Name" placeholder="Your Name" >
+                <small></small>
               </div>
               <div class="col-6 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Email" placeholder="Email Address">
+                <input id="email" class="form-control" type="text" name="Email" placeholder="Email Address" >
+                <small></small>
               </div>
               <div class="col-6 mt-3 wow fadeInUp">
-                <input class="form-control" type="text" name="Subject" placeholder="Subject">
+                <input id="subject" class="form-control" type="text" name="Subject" placeholder="Subject" >
+                <small></small>
               </div>
               <div class="col-12 mt-3 wow fadeInUp">
-                <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
+                <textarea class="form-control" id="message" name="Message" rows="6" placeholder="Enter message here.."></textarea>
+                <small></small>
               </div>
               <button type="submit" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
             </div>
@@ -695,6 +710,27 @@
   <script src="../assets/js/topbar-virtual.js"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  
+  <!--code for submission-->
+  <!--
+  <script>
+    $("#form1").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycby1JC7vx4tFC27qIcHH2O_v-NWDGh9rtjLGHr4LaFw-402EX034CfNWM6V7-5FCPQIRfQ/exec",
+            data:$("#form1").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>-->
+<script src="script.js"></script>
 </body>
 </html>
